@@ -1,0 +1,207 @@
+body,ul,li,h1,h2,a{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+header{
+    background-color: #f63232;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1;/*It make thing to be come front to view people or back by giving z index value if negative then beck and positive then front*/
+    top: 0;
+    left: 0;
+}
+header h1{
+    color: white;
+    border: 8px solid white;
+    padding: 6px 12px;/*Here first value is for top and bottom then second for left and right*/
+    display: inline-block;
+    border-radius: 36px; /*It will make corner to be smooth*/
+}
+.banner{
+    position: relative;
+}
+.banner img{
+    max-width: 100%;
+}
+.banner .welcome{
+    background-color: #feb614;
+    color: white;
+    padding: 30px;
+    position: absolute;
+    left: 0px;
+    top: 30%;
+}
+.banner h2{
+    font-size: 74px;
+}
+.banner h2 span{
+    font-size: 1.3em;/*It make font as parent*em value*/
+}
+nav{
+    background-color: #f4f4f4;
+    padding: 20px;
+    position: sticky;
+    top: 104px;
+}
+nav ul{
+    white-space: nowrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+nav li{
+    width: 25%;
+    display: inline-block;
+    font-size: 24px;
+}
+nav li a{
+    text-decoration: none;
+    color: #4b4b4b;
+}
+nav li a.join{
+    color: #f63232;
+}
+main{
+    max-width: 100%;/*It says that if the viewport have any px view then take that viewport if 800 then take 800px*/
+    width: 1200px;/*If the view have 800 then it will only take 800 or if 1200 then take 1200px*/
+    margin: 80px auto;/*Here it will gona take top and bottom as 80 px of margin but it will equal ditribute the laft and right margin from remaining*/
+    padding: 0 40px;
+    box-sizing: border-box;/*It gonna make the padding iside the fix viewport size and make to not be exxed the viewport*/
+}
+article h2{
+    color: #f63232;
+    font-size: 48px;
+}
+article p{
+    line-height: 2em;
+    color: #4b4b4b;
+}
+.images{
+    text-align: center;
+    margin: 80px 0;
+    white-space: nowrap;
+}
+.images li{
+    display: inline-block;
+    width: 40%;
+    margin: 20px 5%;
+}
+.images li img{
+    max-width: 100%;
+}
+section.join{
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 60px 20px;
+    color: #4b4b4b;
+}
+.join h2{
+    font-size: 36px;
+}
+form input{
+    margin: 20px 0;
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 28px;
+    border: 4px solid white;
+}
+footer{
+    padding: 10px;
+    color: white;
+    background-color: #f63232;
+    text-align: center;
+}
+
+/*Pseudo classes*/
+nav li a:hover{/*it will show action when the cursor is on that element which upon we have applied this class*/
+    text-decoration: underline;
+    background-color: lightblue;
+    padding: 3px;
+}
+.images li:hover{
+    position: relative;
+    top: -4px/*Here negative work as move up*/;
+}
+form input:focus/*This make object to be look in focus*/{
+    border: 4px solid #4b4b4b;
+    outline: none;
+}
+form input:valid{
+    border: 4px solid #26dd18;
+}
+/* nav li:first-child it work only on first child or element of a tag{
+    border: 3px solid #f63232;
+} */
+
+article p::first-line{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+section.join p::first-letter{
+    font-size: 1.2em;
+}
+/* section.join p::selection but here due to specific selection it only work on selection tag{
+    background-color: #f63232;
+    color: white;
+} */
+p::selection{/*Now it will work on all p tags*/
+    background-color: #f63232;
+    color: white; 
+}
+p::after/*This called pseudo element and work on the command of action word which is written after the duble colon*/{
+    content: '...';
+}
+/*responsive styles*/
+@media screen and (max-width:1200px){
+    .banner .welcome h2{
+        font-size: 60px;
+    }
+    nav li{
+        font-size: 18px;
+    }
+    
+}
+@media screen and (max-width:1000px){
+    .banner .welcome h2{
+        font-size: 40px;
+    }
+    
+}
+@media screen and (max-width:740px){
+    .banner .welcome{
+       position: relative;
+       text-align: center;
+       padding: 8px;
+    }
+    .banner .welcome br{
+        display: none;
+    }
+    .banner .welcome h2{
+        font-size: 30px;
+    }
+    .banner .welcome span{
+        font-size: 1.1em;
+    }
+    .images li{
+        width: 100%;
+        margin: 20px auto;
+        display: block;
+    }
+    
+}
+@media screen and (max-width:560px){
+    nav li{
+        font-size: 20px;
+        display: block;
+        width: 100%;
+        margin: 12px 0;
+    }
+    header{
+        position: relative;
+    }
+    nav{
+        top: 0;
+    }
+}
